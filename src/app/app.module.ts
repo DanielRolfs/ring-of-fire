@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogAddPlayerComponent } from './dialog-add-player/dialog-add-player.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DialogAddPlayerComponent } from './dialog-add-player/dialog-add-player.
     AppRoutingModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
     BrowserAnimationsModule
   ],
   providers: [],
