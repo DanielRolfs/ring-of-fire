@@ -15,7 +15,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { MaterialModule } from './material/material.module';
 import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule,
     MaterialModule,
     MatInputModule,
-    MatFormFieldModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

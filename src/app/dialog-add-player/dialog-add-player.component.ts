@@ -13,4 +13,11 @@ export class DialogAddPlayerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onNoClick(){
+
+  }
+
+  onclick(){
+    
+  }
 }
