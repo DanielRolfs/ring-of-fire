@@ -13,9 +13,10 @@ import { DialogAddPlayerComponent } from './dialog-add-player/dialog-add-player.
 import {MatDialogModule} from '@angular/material/dialog';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
-import { MaterialModule } from './material/material.module';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { GameInfoComponent } from './game-info/game-info.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     StartScreenComponent,
     GameComponent,
     PlayerComponent,
-    DialogAddPlayerComponent
+    DialogAddPlayerComponent,
+    GameInfoComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -33,9 +35,9 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    MaterialModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

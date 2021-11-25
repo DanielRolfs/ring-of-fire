@@ -39,6 +39,9 @@ export class GameComponent implements OnInit {
       this.currentCard = this.game.stack.pop(); // pop gibt letzten wert aus array & entfernt es aus dem array
       this.pickCardAnimtation = true;
       
+      this.game.currentPlayer++;
+      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+
 
       setTimeout(() => {
         this.game.playedCards.push(this.currentCard);
@@ -50,8 +53,10 @@ export class GameComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    dialogRef.afterClosed().subscribe((name: string) => {
+      if(name && name.length > 0){   // check ob die variable name existiert und wenn sie existiert ob sie größer als 0 ist
+        this.game.players.push(name);
+      }
     });
   }
 }
