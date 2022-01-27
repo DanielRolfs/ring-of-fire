@@ -2,7 +2,8 @@
     width: 100vw;
     height: 100vh;
     max-width: 100%;
-    background-image: url("assets/img/board.jpg");
+    background-image: url("../../assets/img/board.jpg");
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +54,7 @@
 .player-position{
     position: absolute;
     right: 0;
+    z-index: 1;
 }
 
 .btn-add{
@@ -66,4 +68,37 @@
     bottom: 32px;
     left: 200px;
     right: 300px;
+
+    @media (max-width: 960px) {
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+}
+
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.scroll-container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    app-player-mobile {
+        margin-left: 8px;
+    }
+}
+
+app-player, app-player-mobile {
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.15);
+    }
 }
