@@ -48,20 +48,22 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
-    if (!this.game.pickCardAnimtation) {
-      this.game.currentCard = this.game.stack.pop(); // pop gibt letzten wert aus array & entfernt es aus dem array
-      this.game.pickCardAnimtation = true;
+    if(this.game.players.length > 1){
+      if (!this.game.pickCardAnimtation) {
+        this.game.currentCard = this.game.stack.pop(); // pop gibt letzten wert aus array & entfernt es aus dem array
+        this.game.pickCardAnimtation = true;
 
-      this.game.currentPlayer++;
-      this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+        this.game.currentPlayer++;
+        this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
 
-      this.saveGame();
-
-      setTimeout(() => {
-        this.game.playedCards.push(this.game.currentCard);
-        this.game.pickCardAnimtation = false;
         this.saveGame();
-      }, 1000);
+
+        setTimeout(() => {
+          this.game.playedCards.push(this.game.currentCard);
+          this.game.pickCardAnimtation = false;
+          this.saveGame();
+        }, 1000);
+      }
     }
   }
 
